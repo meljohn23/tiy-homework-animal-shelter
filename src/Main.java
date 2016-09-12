@@ -64,13 +64,11 @@ public class Main {
                     index = menuService.promptForAnimalID();
                     animal = animalService.getAnimal(index);
                 }
-
                 menuService.displayAnimals(animal);
-                doRemove = menuService.waitForYN("Are you sure you want to delete this animal? (yes / no)");
+                  doRemove = menuService.waitForYN("Are you sure you want to delete this animal? (yes / no)");
 
                 if (doRemove) {
                     animalService.deleteAnimal(index);
-                    System.out.println("Success:  That animal has been deleted!");
                 }
 
             } else if (action == MenuService.QUIT) {
@@ -80,7 +78,6 @@ public class Main {
                 }
             }
         }
-
         System.out.println("Bye!");
     }
 }

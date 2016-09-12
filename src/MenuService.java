@@ -8,6 +8,8 @@ import java.util.Scanner;
 public class MenuService {
     Scanner scanner = new Scanner(System.in);
 
+    ArrayList<Animal> animals = new ArrayList();
+
     public static final int LIST_ANIMAL = 1;
     public static final int CREATE_ANIMAL = 2;
     public static final int VIEW_ANIMAL = 3;
@@ -123,6 +125,12 @@ public class MenuService {
             value = waitForInt(message);
         }
         return value;
+    }
+
+    public void deleteAnimal(int index) {
+        animals.remove(index);
+        System.out.println("Success:  That animal has been deleted!");
+
     }
 
     public boolean waitForYN(String message) {
