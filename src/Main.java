@@ -47,9 +47,13 @@ public class Main {
                 if (animal != null) {
                     menuService.editAnimal(animal);
 
+                    animalService.updateAnimal(index, animal);
+
                 } else {
                     menuService.displayNoSuchAnimal();
                 }
+
+
 
             } else if (action == MenuService.DELETE_ANIMAL) {
 
@@ -69,6 +73,7 @@ public class Main {
 
                 if (doRemove) {
                     animalService.deleteAnimal(index);
+                    menuService.showDeleteSuccess();
                 }
 
             } else if (action == MenuService.QUIT) {

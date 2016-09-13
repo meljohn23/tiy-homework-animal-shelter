@@ -2,9 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Created by melaniejohnson on 9/7/16.
- */
+
 public class MenuService {
     Scanner scanner = new Scanner(System.in);
 
@@ -42,7 +40,7 @@ public class MenuService {
 
     }
 
-    public static void listAnimals(List<Animal> animals) {
+    public void listAnimals(List<Animal> animals) {
         System.out.println("\n-- List Animals --\n");
 
         if (animals.size() <= 0) {
@@ -127,12 +125,6 @@ public class MenuService {
         return value;
     }
 
-    public void deleteAnimal(int index) {
-        animals.remove(index);
-        System.out.println("Success:  That animal has been deleted!");
-
-    }
-
     public boolean waitForYN(String message) {
         System.out.println(message);
 
@@ -145,6 +137,11 @@ public class MenuService {
             valid = (input.equals("no") || (input.equals("yes")));
         }
         return input.equals("yes");
+    }
+
+    public void showDeleteSuccess() {
+        System.out.println("Success:  That animal has been deleted!");
+
     }
 }
 

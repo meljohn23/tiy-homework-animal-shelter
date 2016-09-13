@@ -11,10 +11,10 @@ public class AnimalService {
     ArrayList<Animal> animals = new ArrayList();
 
     public AnimalService() {
-        animals.add(new Animal("Fido", "dog", "mutt", "old, but good"));
-        animals.add(new Animal("Felix", "cat", "calico", "okay for a cat"));
-        animals.add(new Animal("Charlie", "fish", "tuna", "Sorry! He's not good enough for StarKist"));
-        animals.add(new Animal("Slithering", "reptile", "snake", "watch out for this guy - he's sneaky"));
+        animals.add(new Animal("Fido", "dog", "mutt", "brown with black spots"));
+        animals.add(new Animal("Felix", "cat", "calico", "biege, brown & taupe"));
+        animals.add(new Animal("Charlie", "fish", "tuna", "silver"));
+        animals.add(new Animal("Slithering", "reptile", "snake", "grey"));
     }
 
 //    public ArrayList<Animal> listAnimals() {
@@ -25,6 +25,9 @@ public class AnimalService {
         animals.add(animal);
     }
 
+    public void updateAnimal(int index, Animal animal) {
+        animals.set(index, animal);
+    }
     public void deleteAnimal(int index) {
         animals.remove(index);
     }
