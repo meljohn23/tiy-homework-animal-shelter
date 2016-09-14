@@ -1,3 +1,7 @@
+package service;
+
+import entity.Animal;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

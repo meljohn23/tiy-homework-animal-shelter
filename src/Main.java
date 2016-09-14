@@ -1,6 +1,9 @@
+import repository.AnimalRepository;
+import service.AnimalService;
+import entity.Animal;
+import service.MenuService;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,7 +13,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         MenuService menuService = new MenuService();
-        AnimalService animalService = new AnimalService();
+        AnimalRepository animalRepository = new AnimalRepository();
+
 
         while (true) {
             int action = menuService.promptForMainMenuSelection();
@@ -18,10 +22,10 @@ public class Main {
             if (action == MenuService.CREATE_ANIMAL) {
                 Animal animal = menuService.promptForAnimalData();
 
-                animalService.addAnimal(animal);
+                animalRepository.addAnimal(animal);
 
             } else if (action == MenuService.LIST_ANIMAL) {
-                List<Animal> animals = animalService.animals;
+                List<Animal> animals = animalRepository.listAnimals();
 
                 menuService.listAnimals(animals);
 
@@ -29,7 +33,7 @@ public class Main {
 
                 int index = menuService.promptForAnimalID();
 
-                Animal animal = animalService.getAnimal(index);
+                Animal animal = animalRepository.getAnimal(index);
 
                 if (animal != null) {
                     menuService.displayAnimals(animal);
@@ -42,12 +46,12 @@ public class Main {
 
                 int index = menuService.promptForAnimalID();
 
-                Animal animal = animalService.getAnimal(index);
+                Animal animal = animalRepository.getAnimal(index);
 
                 if (animal != null) {
                     menuService.editAnimal(animal);
 
-                    animalService.updateAnimal(index, animal);
+                    animalRepository.updateAnimal(index, animal);
 
                 } else {
                     menuService.displayNoSuchAnimal();
@@ -61,18 +65,18 @@ public class Main {
 
                 int index = menuService.promptForAnimalID();
 
-                Animal animal = animalService.getAnimal(index);
+                Animal animal = animalRepository.getAnimal(index);
 
                 while (animal == null) {
                     menuService.displayNoSuchAnimal();
                     index = menuService.promptForAnimalID();
-                    animal = animalService.getAnimal(index);
+                    animal = animalRepository.getAnimal(index);
                 }
                 menuService.displayAnimals(animal);
                   doRemove = menuService.waitForYN("Are you sure you want to delete this animal? (yes / no)");
 
                 if (doRemove) {
-                    animalService.deleteAnimal(index);
+                    animalRepository.deleteAnimal(index);
                     menuService.showDeleteSuccess();
                 }
 
