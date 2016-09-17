@@ -1,6 +1,6 @@
 import repository.AnimalRepository;
-import service.AnimalService;
 import entity.Animal;
+import service.AnimalService;
 import service.MenuService;
 
 import java.io.IOException;
@@ -10,11 +10,11 @@ import java.util.List;
  * Created by melaniejohnson on 9/7/16.
  */
 public class Main {
-
     public static void main(String[] args) throws IOException {
-        MenuService menuService = new MenuService();
-        AnimalRepository animalRepository = new AnimalRepository();
 
+        AnimalRepository animalRepository = new AnimalRepository("animals.json");
+        AnimalService animalService = new AnimalService(animalRepository);
+        MenuService menuService = new MenuService();
 
         while (true) {
             int action = menuService.promptForMainMenuSelection();
@@ -22,7 +22,7 @@ public class Main {
             if (action == MenuService.CREATE_ANIMAL) {
                 Animal animal = menuService.promptForAnimalData();
 
-                animalRepository.addAnimal(animal);
+                animalRepository.createAnimal(animal);
 
             } else if (action == MenuService.LIST_ANIMAL) {
                 List<Animal> animals = animalRepository.listAnimals();

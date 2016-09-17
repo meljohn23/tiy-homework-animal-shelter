@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Sir Jason of Glen Burnie",
+    "type": "dog",
+    "breed": "brittany spaniel",
+    "description": "white with liver spots"
+  },
+  {
+    "name": "Fido",
+    "type": "dog",
+    "breed": "mutt",
+    "description": "brown with black spots"
+  },
+  {
+    "name": "Felix",
+    "type": "cat",
+    "breed": "calico",
+    "description": "beige, brown, white \u0026 taupe spots"
+  },
+  {
+    "name": "Charlie",
+    "type": "fish",
+    "breed": "tuna",
+    "description": "silver scales and not good enough for starkist"
+  },
+  {
+    "name": "Slitherin",
+    "type": "reptile",
+    "breed": "snake",
+    "description": "black"
+  },
+  {
+    "name": "Fluffy",
+    "type": "small animal",
+    "breed": "rabbit",
+    "description": "white, cottony and furry"
+  }
+]
