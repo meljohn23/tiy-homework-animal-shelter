@@ -3,6 +3,7 @@ package service;
 import entity.Animal;
 import repository.AnimalRepository;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -20,5 +21,19 @@ public class AnimalService {
         return animalRepository.listAnimals();
     }
 
+    public void createAnimal(Animal animal) throws IOException {
+        animalRepository.createAnimal(animal);
+    }
 
+    public Animal getAnimal(int index) throws IOException {
+        return animalRepository.getAnimal(index);
+    }
+
+    public void updateAnimal(int index, Animal animal) throws IOException {
+        animalRepository.updateAnimal(index, animal);
+    }
+
+    public void deleteAnimal(int index) throws IOException {
+        animalRepository.deleteAnimal(index);
+    }
 }

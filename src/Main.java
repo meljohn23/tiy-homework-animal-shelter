@@ -22,10 +22,10 @@ public class Main {
             if (action == MenuService.CREATE_ANIMAL) {
                 Animal animal = menuService.promptForAnimalData();
 
-                animalRepository.createAnimal(animal);
+                animalService.createAnimal(animal);
 
             } else if (action == MenuService.LIST_ANIMAL) {
-                List<Animal> animals = animalRepository.listAnimals();
+                List<Animal> animals = animalService.listAnimals();
 
                 menuService.listAnimals(animals);
 
@@ -33,7 +33,7 @@ public class Main {
 
                 int index = menuService.promptForAnimalID();
 
-                Animal animal = animalRepository.getAnimal(index);
+                Animal animal = animalService.getAnimal(index);
 
                 if (animal != null) {
                     menuService.displayAnimals(animal);
@@ -46,12 +46,12 @@ public class Main {
 
                 int index = menuService.promptForAnimalID();
 
-                Animal animal = animalRepository.getAnimal(index);
+                Animal animal = animalService.getAnimal(index);
 
                 if (animal != null) {
                     menuService.editAnimal(animal);
 
-                    animalRepository.updateAnimal(index, animal);
+                    animalService.updateAnimal(index, animal);
 
                 } else {
                     menuService.displayNoSuchAnimal();
@@ -65,18 +65,18 @@ public class Main {
 
                 int index = menuService.promptForAnimalID();
 
-                Animal animal = animalRepository.getAnimal(index);
+                Animal animal = animalService.getAnimal(index);
 
                 while (animal == null) {
                     menuService.displayNoSuchAnimal();
                     index = menuService.promptForAnimalID();
-                    animal = animalRepository.getAnimal(index);
+                    animal = animalService.getAnimal(index);
                 }
                 menuService.displayAnimals(animal);
                   doRemove = menuService.waitForYN("Are you sure you want to delete this animal? (yes / no)");
 
                 if (doRemove) {
-                    animalRepository.deleteAnimal(index);
+                    animalService.deleteAnimal(index);
                     menuService.showDeleteSuccess();
                 }
 

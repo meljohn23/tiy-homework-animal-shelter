@@ -38,7 +38,7 @@ public class AnimalRepository {
             animals = gson.fromJson(json, listType);
 
 //            animals.add(new Animal("Fido", "dog", "mutt", "brown with black spots"));
-//            animals.add(new Animal("Felix", "cat", "calico", "biege, brown & taupe"));
+//            animals.add(new Animal("Felix", "cat", "calico", "beige, brown and taupe"));
 //            animals.add(new Animal("Charlie", "fish", "tuna", "silver"));
 //            animals.add(new Animal("Slithering", "reptile", "snake", "grey"));
         }
